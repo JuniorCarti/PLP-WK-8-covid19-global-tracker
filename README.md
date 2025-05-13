@@ -53,24 +53,25 @@ This command will:
 * `country_comparison_*.png`: Visual comparisons of COVID-19 metrics across countries.
 * `covid_clean_data.csv`: Processed and cleaned dataset for further analysis.
 
+Here’s the updated repository structure with the correct order:
+
 ## 📦 Repository Structure
 
 ```
 PLP-WK-8-covid19-global-tracker/
 │
-├── covid_analysis.py       # Main analysis script
-├── README.md               # Project documentation
-├── requirements.txt        # Dependencies
 ├── output/                 # Output visualizations and data
 │   ├── global_trends.png
 │   ├── country_comparison_cases_per_million.png
 │   ├── country_comparison_deaths_per_million.png
 │   ├── country_comparison_pct_fully_vaccinated.png
 │   └── covid_clean_data.csv
-└── sample_data/            # (Optional) Sample dataset
-    └── owid-covid-data.csv
+├── sample_data/            # (Optional) Sample dataset
+│   └── owid-covid-data.csv
+├── README.md               # Project documentation
+├── covid_analysis.py       # Main analysis script
+└── requirements.txt        # Dependencies
 ```
-
 ## 📊 Data Source
 
 
