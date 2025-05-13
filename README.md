@@ -1,6 +1,6 @@
 # COVID-19 Global Tracker
 
-![Sample Visualization](output/country_comparison_cases_per_million.png)
+![Sample Visualization](output/global_trends.png)
 
 A data-driven project analyzing global COVID-19 trends, including case tracking, death rates, and vaccination progress through dynamic visualizations.
 
