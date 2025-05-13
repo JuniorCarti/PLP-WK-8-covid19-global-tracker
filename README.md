@@ -73,7 +73,11 @@ PLP-WK-8-covid19-global-tracker/
 
 ## 📊 Data Source
 
-Data is sourced from [Our World in Data](https://ourworldindata.org/covid-cases).
+
+Due to file size limitations on GitHub, the `owid-covid-data.csv` file is not included in the repository.
+To run the analysis, download the latest COVID-19 dataset from [Our World in Data](https://ourworldindata.org/covid-cases) and place it in the `sample_data/` directory as:
+sample_data/owid-covid-data.csv
+```
 
 ## 📝 License
 
