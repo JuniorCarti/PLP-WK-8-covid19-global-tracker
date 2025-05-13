@@ -1,5 +1,5 @@
-# COVID-19 GLOBAL DATA TRACKER
-# ===========================
+
+# COVID-19 Data Analysis and Visualization
 # A comprehensive analysis of worldwide COVID-19 trends
 # Includes case tracking, death rates, and vaccination progress
 
@@ -38,13 +38,13 @@ def load_covid_data():
                 else:
                     continue
             
-            print(f"✅ Successfully loaded data with {len(df)} records")
+            print(f"Successfully loaded data with {len(df)} records")
             return df
         
         except Exception as e:
-            print(f"⚠️ Failed to load from {source}: {str(e)}")
+            print(f"Failed to load from {source}: {str(e)}")
     
-    print("❌ All data sources failed. Please check your internet connection or download the data manually.")
+    print("All data sources failed. Please check your internet connection or download the data manually.")
     exit()
 
 # 2. DATA CLEANING AND PREPARATION
@@ -146,7 +146,7 @@ def plot_global_trends(data):
         plt.tight_layout()
         plt.savefig('output/global_trends.png')
         plt.close()
-        print("✅ Saved global trends visualization")
+        print("Saved global trends visualization")
         
     except Exception as e:
         print(f"Error plotting global trends: {e}")
@@ -189,7 +189,7 @@ def plot_country_comparison(data, metric='total_cases_per_million', top_n=15):
         filename = f"output/country_comparison_{metric}.png"
         plt.savefig(filename)
         plt.close()
-        print(f"✅ Saved {filename}")
+        print(f"Saved {filename}")
         
     except Exception as e:
         print(f"Error plotting country comparison: {e}")
@@ -205,11 +205,11 @@ if __name__ == "__main__":
     raw_df = load_covid_data()
     clean_df = clean_covid_data(raw_df)
     
-    print(f"\n📊 Cleaned data covers {clean_df['location'].nunique()} countries")
-    print(f"📅 Time period: {clean_df['date'].min().date()} to {clean_df['date'].max().date()}")
+    print(f"\nCleaned data covers {clean_df['location'].nunique()} countries")
+    print(f"Time period: {clean_df['date'].min().date()} to {clean_df['date'].max().date()}")
     
     # Generate visualizations
-    print("\n📈 Generating visualizations...")
+    print("\nGenerating visualizations...")
     plot_global_trends(clean_df)
     plot_country_comparison(clean_df, 'cases_per_million')
     plot_country_comparison(clean_df, 'deaths_per_million')
@@ -218,6 +218,8 @@ if __name__ == "__main__":
     if 'pct_fully_vaccinated' in clean_df.columns:
         plot_country_comparison(clean_df, 'pct_fully_vaccinated')
     
-    # Save cleaned data
+    # Saved cleaned data
+    print("\nSaving cleaned data...")
+    # Save cleaned data to CSV
     clean_df.to_csv('output/covid_clean_data.csv', index=False)
-    print("\n🎉 Analysis complete! Check the 'output' folder for results.")
+    print("\nAnalysis complete! Check the 'output' folder for results.")
